@@ -1,0 +1,42 @@
+<html>
+<head>
+   	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+ 	<title>VRML/X3D</title>
+    <script type='text/javascript' src='http://www.x3dom.org/download/x3dom.js'></script>
+    <link rel='stylesheet' type='text/css' href='http://www.x3dom.org/download/x3dom.css'></link>
+</head>
+<body>
+<x3d width='800px' height='600px'>
+<scene>
+	<shape> 
+        <appearance> 
+        <material diffuseColor='1 0 0'></material> 
+        </appearance> 
+       	<TriangleSet solid='false' ccw='true' colorPerVertex='true' normalPerVertex='true'
+                                 containerField='geometry'>
+            <Coordinate point='-3.0 -2.0 0 3.0 -2.0 0 0 2.5 0'/>
+        </TriangleSet> 
+    </shape>
+    <shape> 
+        <appearance> 
+        <material diffuseColor='1 1 0'></material> 
+        </appearance> 
+       	<TriangleSet solid='false' ccw='true' colorPerVertex='true' normalPerVertex='true'
+                                 containerField='geometry'>
+            <Coordinate point='-2 -1.5 0 2 -1.5 0 0 1.6 0'/>
+        </TriangleSet> 
+    </shape>
+    <transform center = '0 -0.5 0'rotation='1 0 0 1.5'>
+    <shape>
+    <appearance> 
+        <material diffuseColor='0 0 0'></material> 
+    </appearance> 
+    <Cylinder solid='false' ccw='true' height = '0.1' radius = '0.75'>
+    	<Coordinate point = '0 -1 -1'/>
+    </Cylinder>
+    </shape>
+    </transform>
+</scene>
+</x3d>
+</body>
+</html>
