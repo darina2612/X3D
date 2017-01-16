@@ -4,6 +4,9 @@
  	<title>VRML/X3D</title>
     <script type='text/javascript' src='http://www.x3dom.org/download/x3dom.js'></script>
     <link rel='stylesheet' type='text/css' href='http://www.x3dom.org/download/x3dom.css'></link>
+    <p>
+    <font size='40'>A 40</font>
+    </p>
 </head>
 <body>
 <x3d width='800px' height='600px'>
@@ -23,16 +26,16 @@
         </appearance> 
        	<TriangleSet solid='false' ccw='true' colorPerVertex='true' normalPerVertex='true'
                                  containerField='geometry'>
-            <Coordinate point='-2 -1.5 0 2 -1.5 0 0 1.6 0'/>
+            <Coordinate point='-2 -1.5 0.02 2 -1.5 0 0.02 1.6 0.02'/>
         </TriangleSet> 
     </shape>
-    <transform center = '0 -0.5 0'rotation='1 0 0 1.5'>
+    <transform center='0.4 -0.4 -0.4'rotation='1 0 0 1.6' translation='0 0.4 0'>
     <shape>
     <appearance> 
         <material diffuseColor='0 0 0'></material> 
     </appearance> 
-    <Cylinder solid='false' ccw='true' height = '0.1' radius = '0.75'>
-    	<Coordinate point = '0 -1 -1'/>
+    <Cylinder solid='false' ccw='true' height = '0.1' radius = '0.75'
+     containerField='geometry'>
     </Cylinder>
     </shape>
     </transform>
