@@ -1,6 +1,6 @@
 <html>
 <head>
-   	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+   	<meta http-equiv='X-UA-Compatible' content='IE=edge'/>
  	<title>VRML/X3D</title>
     <script type='text/javascript' src='http://www.x3dom.org/download/x3dom.js'></script>
     <link rel='stylesheet' type='text/css' href='http://www.x3dom.org/download/x3dom.css'></link>
@@ -35,16 +35,36 @@
             <Material diffuseColor='1 1 0' transparency='0.2'/>
         </Appearance>
     </shape>
-     <transform center='0.4 -0.4 -0.4'rotation='1 0 0 1.55' translation='0 0.4 -0.25'>
+     <transform center='0.4 -0.4 -0.4' rotation='1 0 0 1.55' translation='0 0.4 -0.25'>
     <shape>
     <appearance> 
         <material diffuseColor='0 0 0'></material> 
     </appearance> 
-    <Cylinder solid='false' ccw='true' height = '-1.5' radius = '0.75' top='false'>
-    </Cylinder>
+    <Cylinder solid='false' ccw='true' height = '-1.5' radius = '0.75' top='false'></Cylinder>
     </shape>
     </transform>
+    <Group>
+    <transform center='0.4 -0.4 -0.4' rotation='1 0 0 1.55' translation='0 0.4 -0.15'>
+    <shape>
+    <appearance> 
+        <material DEF='mat' diffuseColor='1 0 0' transparency='1'/> 
+    </appearance> 
+    <Cylinder solid='false' ccw='true' height = '-1.6' radius = '1' top='false'></Cylinder>
+    </shape>
+    </transform>
+
+    <ScalarInterpolator DEF='fade' key='0 0.125 0.25 0.375 0.5 0.625 0.75 1' keyValue='0 0.25 0.5 0.72 1 0.75 0.5 0.25' ></ScalarInterpolator>
+    <timeSensor DEF='time' cycleInterval='2' loop='true'></timeSensor>
+    </Group>
+
+    <Route fromNode='time' fromField ='fraction_changed' toNode='fade' toField='set_fraction'></Route>
+    <Route fromNode='fade' fromField ='value_changed' toNode='mat' toField='set_transparency'></Route>
+
 </scene>
+
+<audio autoplay='true' loop='true'>
+  <source src='sound.mp3' type='audio/mpeg'>
+</audio>
 </x3d>
 </body>
 </html>
